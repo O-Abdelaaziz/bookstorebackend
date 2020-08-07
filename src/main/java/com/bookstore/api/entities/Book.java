@@ -11,7 +11,7 @@ import java.util.Date;
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
     @Column(name = "sku")
@@ -39,6 +39,6 @@ public class Book {
 
 
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @JoinColumn(name = "categories_id",nullable = false)
+    @JoinColumn(name = "categories_id")
     private Category category;
 }
